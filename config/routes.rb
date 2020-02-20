@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   get("/", { :controller => "users", :action => "index" })
 
-  # User routes
+  # User routes - Added to for sign in sessions
+  get("/user_sign_up", { :controller => "users", :action => "new_registration_form" })
+  get("/user_sign_out", { :controller => "users", :action => "toast_user" })
+  get("/user_sign_in", { :controller => "users", :action => "new_session" })
+  post("/verify_credentials", { :controller => "users", :action => "authenticate" })
 
   # CREATE
   get("/insert_user_record", {:controller => "users", :action => "create" })
